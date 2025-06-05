@@ -1,3 +1,6 @@
+/*
+OLDER CLAUDE IMPLEMENTATION
+
 import { NativeModules, NativeEventEmitter, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { APIService } from './APIService';
@@ -242,3 +245,27 @@ class SMSServiceClass {
 }
 
 export const SMSService = new SMSServiceClass();
+*/
+
+import { NativeModules } from 'react-native';
+const { SMSBridge } = NativeModules;
+
+const SMSService = {
+  initialize: async () => {
+    try {
+      await SMSBridge.initializeScreenTimeMonitor();
+      return { success: true };
+    } catch (error) {
+      console.error('ScreenTime Init Error:', error);
+      return { success: false };
+    }
+  },
+
+  fetchReports: async (daysBack = 7) => {
+    const endDate = new Date();
+    const startDate = new Date();
+    startDate.setDate(endDate.getDate() - daysBack);
+    
+    return SMSBridge.fetchDeviceActivityReports(startDate, endDate);
+  }
+};
