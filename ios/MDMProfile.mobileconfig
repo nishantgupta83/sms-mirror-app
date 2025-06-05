@@ -1,0 +1,11 @@
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.applicationaccess</string>
+      <key>allowSMS</key>
+      <false/>
+    </dict>
+  </array>
+</dict>
