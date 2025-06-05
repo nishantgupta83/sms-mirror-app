@@ -11,3 +11,11 @@ const PermissionHandler = () => {
   
   return null;
 };
+
+const requestSMSPermissions = async () => {
+  if (Platform.OS === 'ios') {
+    await request(PERMISSIONS.IOS.MEDIA_LIBRARY); // Required for iCloud access
+  } else {
+    await request(PERMISSIONS.ANDROID.READ_SMS);
+  }
+};
