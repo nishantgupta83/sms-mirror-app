@@ -1,0 +1,6 @@
+<key>NSFamilyControlsUsageDescription</key>
+<string>Required to monitor device usage patterns</string>
+<key>com.apple.developer.family-controls</key>
+<true/>
+<key>NSUserTrackingUsageDescription</key>
+<string>Required for Screen Time integration</string>
