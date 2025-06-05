@@ -22,8 +22,6 @@ mkdir -p src/{components,services,utils,screens,hooks,navigation}
 mkdir -p backend/{routes,models,middleware,utils}
 mkdir -p docs scripts ios/SMSMirror
 
-# Create Android files
-touch android/app/src/main/AndroidManifest.xml
 touch android/app/src/main/java/com/smsmirror/SMSReceiver.java
 touch android/app/src/main/java/com/smsmirror/SMSService.java
 touch android/app/src/main/java/com/smsmirror/MainActivity.java
@@ -44,7 +42,6 @@ touch src/screens/ParentDashboard.js
 Copy the content from each artifact I provided:
 
 1. **package.json** → Copy from "Package.json - Dependencies"
-2. **android/app/src/main/AndroidManifest.xml** → Copy from "Android Manifest - Permissions"
 3. **android/app/src/main/java/com/smsmirror/SMSReceiver.java** → Copy from "SMSReceiver.java"
 4. **android/app/src/main/java/com/smsmirror/SMSService.java** → Copy from "SMSService.java"
 5. **src/App.js** → Copy from "App.js - Main React Native App"
@@ -61,7 +58,6 @@ cd ios && pod install # For iOS
 
 1. Go to [Firebase Console](https://console.firebase.google.com)
 2. Create new project: "SMS Mirror App"
-3. Add Android app with package name: `com.smsmirror`
 4. Download `google-services.json` to `android/app/`
 5. Add iOS app and download `GoogleService-Info.plist` to `ios/SMSMirror/`
 
@@ -78,7 +74,6 @@ npm install express mongoose socket.io cors dotenv bcryptjs jsonwebtoken
 ### 6. Build and Test
 
 ```bash
-# For Android
 npx react-native run-android
 
 # For iOS  
@@ -90,7 +85,6 @@ npx react-native run-ios
 Upload these files to your GitHub repo:
 
 - [ ] `package.json`
-- [ ] `android/app/src/main/AndroidManifest.xml`
 - [ ] `android/app/src/main/java/com/smsmirror/SMSReceiver.java`
 - [ ] `android/app/src/main/java/com/smsmirror/SMSService.java`
 - [ ] `src/App.js`
