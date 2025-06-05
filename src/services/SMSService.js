@@ -268,4 +268,11 @@ const SMSService = {
     
     return SMSBridge.fetchDeviceActivityReports(startDate, endDate);
   }
+
+  // SMSService.js
+const syncICloudMessages = async () => {
+  const messages = await NativeModules.CloudKitManager.fetchMessagesSince(lastSync);
+  storeEncrypted(messages);
+};
+
 };
